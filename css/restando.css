@@ -1,0 +1,133 @@
+
+.restas {
+    
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+ h2 {
+    display: flex;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.containerRestas {
+    align-items: center;
+    
+    background-color:#c7eef3;
+    width: 800px;
+    margin: auto;
+    border: 2px solid #131f7a;  
+    border-radius: 20px;
+    display: flex;
+    padding: 50px 0;    
+}
+
+.izquierdo {
+    padding-left: 70px;
+    width: 70%;
+    font-size: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.derecha {
+    width: 30%;
+}
+
+.msj {
+    font-size: 40px;
+    height: 50px;
+}
+
+.opcion {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000;
+    font-size: 50px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #104f52;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.opcion:hover{
+    background-color: #b60eb6;
+}
+
+button {
+    left: 55%;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    background: #115963;
+    
+
+}
+
+button a {
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+
+}
+
+@media (max-width: 700px){
+    .restas {
+    
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+     h2 {
+      
+        font-size: 30px;
+        
+    }
+    
+    .containerRestas {
+       
+        width: 500px;
+    }
+
+    button {
+        left: 35%;
+    }
+    
+}
+
+
+@media (max-width: 500px){
+    .restas {
+    
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+     h2 {
+      
+        font-size: 20px;
+        
+    }
+    
+    .containerRestas {
+       
+        width: 400px;
+    }
+
+    button {
+        left: 25%;
+    }
+    
+}
