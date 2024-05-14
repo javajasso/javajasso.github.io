@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMates</title>
+
+    
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--FONT QUICKSAND-->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/dragdrop.css">
+    <link rel="stylesheet" href="/css/breadcrumbs.css">
+    <link rel="stylesheet" href="/css/restando.css">
+
+
+</head>
+<body>
+
+    <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="container">
+        <nav class="nav-main">
+            <a href="/"><img src="/img/edumatelogo.png" alt="edumates LOGO" class="nav-brand"></a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li>
+                    <a href="/suma">Practicando mi conocimiento</a>
+                </li>
+                <li>
+                    <a href="/resta">Restando Numeros</a>
+                </li>
+                <li>
+                    <a href="/crear">Crear Operaciones</a>
+                </li>
+                <li>
+                    <a href="/multi">Tablas de Multiplicar</a>
+                </li>
+                
+                <li>
+                    <a href="/galeria">Galeria</a>
+                </li>
+            </ul>
+    
+            <div id="ctn-icon-search" >
+                <i class="fas fa-search" id="icon-search"></i>           
+                
+            </div>
+        </nav>
+        <hr>
+
+        <section>
+            <div class="wrapper">
+                <div class="breadcrumbs">
+                    <div class="home">
+                        <a href="/"><i class="fas fa-house-chimney-user"></i></a>
+                    </div>
+                    <ul>
+                        <li><a href="/conocimiento" ><i class="fas fa-graduation-cap"></i>
+                            <p>Conocimiento</p></a></li>
+                        
+                        
+                        <li class="active"><a href="/resta"><i class="fas fa-circle-minus"></i>
+                            <p>Restando Números</p></a></li>
+                        
+                       
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+        </div>
+
+        <ul id="box-search">
+            <li><a href="/suma"><i class="fas fa-search"></i>Sumas</a></li>
+            <li><a href="/resta"><i class="fas fa-search"></i>Restas</a></li>
+            <li><a href="/multi"><i class="fas fa-search"></i>Multiplicación</a></li>
+            <li><a href="/galeria"><i class="fas fa-search"></i>Galeria</a></li>
+            <li><a href="/nosotros"><i class="fas fa-search"></i>Nosotros</a></li>
+            
+        </ul>
+
+        <div id="cover-ctn-search"></div>
+    
+        <h2>Practicando restas</h2>
+        <section class="restas">
+           
+            <div class="containerRestas">
+                
+                
+                <div class="izquierdo">
+                    <div class="container-operacion">
+                        <span id="resta"> 9 - 5 = </span>
+                        <span class="resultado" id="resultado">4</span>
+                    </div>
+                    <span id="msj" class="msj">EXCELENTE</span>
+
+                </div>
+                
+
+                <div class="derecha">
+                    <span id="op1" class="opcion" onclick="controlarRespuesta(this)">18</span>
+                    <span id="op2" class="opcion" onclick="controlarRespuesta(this)">18</span>
+                    <span id="op3" class="opcion" onclick="controlarRespuesta(this)">18</span>
+                </div>
+
+            </div>
+
+            <button><a href="/resta">Probar otra operación</a></button>
+        </section>
+
+<iframe class="footerweb" src="/footer" frameborder="0"></iframe>
+
+<script src="/js/main.js"></script>
+<script src="/js/buscador.js"></script>
+<script src="/js/restando.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMates</title>
+
+    <!-- FONT AWESOME
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+
+    <!--FONT QUICKSAND-->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/dragdrop.css">
+    <link rel="stylesheet" href="/css/breadcrumbs.css">
+    <link rel="stylesheet" href="/css/operaciones.css">
+
+    <!--BREADCRUMBS-->
+    <script src="https://kit.font-awesome.com/b99e675b6e.js"></script>
+
+</head>
+<body>
+
+    <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="container">
+        <nav class="nav-main">
+            <a href="/"><img src="/img/edumatelogo.png" alt="edumates LOGO" class="nav-brand"></a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li>
+                    <a href="/suma">Practicando mi conocimiento</a>
+                </li>
+                <li>
+                    <a href="/resta">Restando Numeros</a>
+                </li>
+                <li>
+                    <a href="/crear">Crear Operaciones</a>
+                </li>
+                <li>
+                    <a href="/multi">Tablas de Multiplicar</a>
+                </li>
+                
+                <li>
+                    <a href="/galeria">Galeria</a>
+                </li>
+            </ul>
+    
+            <div id="ctn-icon-search" >
+                <i class="fas fa-search" id="icon-search"></i>           
+                
+            </div>
+        </nav>
+        <hr>
+
+        <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+        </div>
+
+        <ul id="box-search">
+            <li><a href="/suma"><i class="fas fa-search"></i>Sumas</a></li>
+            <li><a href="/resta"><i class="fas fa-search"></i>Restas</a></li>
+            <li><a href="/multi"><i class="fas fa-search"></i>Multiplicación</a></li>
+            <li><a href="/galeria"><i class="fas fa-search"></i>Galeria</a></li>
+            <li><a href="/nosotros"><i class="fas fa-search"></i>Nosotros</a></li>
+            
+        </ul>
+
+        <div id="cover-ctn-search"></div>
+    
+        <section>
+            <div class="wrapper">
+                <div class="breadcrumbs">
+                    <div class="home">
+                        <a href="/"><i class="fas fa-house-chimney-user"></i></a>
+                    </div>
+                    <ul>
+                        <li><a href="/conocimiento"><i class="fas fa-graduation-cap"></i>
+                            <p>Conocimiento</p></a></li>                        
+                        
+                        <li class="active"><a href="/suma"><i class="fas fa-circle-plus"></i>
+                            <p>Practicando</p></a></li>
+                        
+                       
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+
+        <section class="oper">
+            <div class="containerOper">
+                <h2>Practica tu conocimiento</h2>
+                <section class="container-operadores">
+                    <button id="suma" style="color: #ff6384;" onclick="btnSumar()">
+                        <i class="fas fa-plus operando"></i>
+                    </button>
+                    <button id="resta" style="color: #ffce56;" onclick="btnResta()">
+                        <i class="fas fa-minus operando"></i>
+                    </button>
+                    <button id="producto" style="color: #9966ff;" onclick="btnProducto()">
+                        <i class="fas fa-xmark operando"></i>
+                    </button>
+                    <button id="division" style="color: #36a2eb;" onclick="btnDividir()">
+                        <i class="fas fa-divide operando"></i>
+                    </button>
+                </section>
+
+                <section class="container-operacion">
+                    <span id="num1"></span>
+                    <span id="operacion"></span>
+                    <span id="num2"></span>
+                    <span> = </span>
+                    <input type="text" id="respuesta_usuario">
+                    <button id="corregir" onclick="corregir()">Enviar Respuesta</button> 
+                </section>
+
+                <section id="msj_vacio">
+
+                </section>
+                <section id="msj_correccion">
+
+                </section>
+            </div>
+
+        
+        </section>
+
+        
+<div class="footersuma">
+<iframe class="footerweb" src="/footer" frameborder="0"></iframe>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/buscador.js"></script>
+<script src="/js/dragdrop.js"></script>
+<script src="/js/operaciones.js"></script>
+    
+</body>
+</html>

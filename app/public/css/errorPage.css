@@ -1,0 +1,79 @@
+img {
+    width: 50%;
+}
+
+.containerError {
+    height: 75vh;
+    display: flex;    
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton h2 {
+    text-align: center;
+}
+
+button {
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: none;
+    background: #115963;
+    
+
+}
+
+button a {
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+
+}
+
+@media (max-width: 700px){
+    
+}
+@media (max-width: 500px){
+    .containerError {
+        flex-direction: column;
+    
+        }
+    
+        .boton h2 {
+            font-size: 15px;
+        }
+    
+        button {
+            padding: 10px 20px;
+            font-size: 15px;
+    
+    
+        }
+}
+
+@media (max-width: 300px){
+    .containerError {
+    flex-direction: column;
+
+    }
+
+    .boton h2 {
+        font-size: 10px;
+    }
+
+    button {
+        padding: 5px 15px;
+        font-size: 10px;
+
+
+    }
+}

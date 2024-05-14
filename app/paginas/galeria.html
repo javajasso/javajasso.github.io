@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Didacticos</title>
+
+    
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--FONT QUICKSAND-->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--CUSTOM CSS  -->
+    <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="/css/footer.css">
+   <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/img.css">
+    <link rel="stylesheet" href="/css/breadcrumbs.css">
+
+</head>
+
+
+<body>
+
+    <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="container">
+        <nav class="nav-main">
+            <a href="/"><img src="/img/edumatelogo.png" alt="edumates LOGO" class="nav-brand"></a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li>
+                    <a href="/suma">Practicando mi conocimiento</a>
+                </li>
+                <li>
+                    <a href="/resta">Restando Numeros</a>
+                </li>
+                <li>
+                    <a href="/crear">Crear Operaciones</a>
+                </li>
+                <li>
+                    <a href="/multi">Tablas de Multiplicar</a>
+                </li>
+                
+                <li>
+                    <a href="/galeria">Galeria</a>
+                </li>
+            </ul>
+    
+            <div id="ctn-icon-search" >
+                <i class="fas fa-search" id="icon-search"></i>           
+                
+            </div>
+        </nav>
+        <hr>
+
+        <section>
+            <div class="wrapper">
+                <div class="breadcrumbs">
+                    <div class="home">
+                        <a href="/"><i class="fas fa-house-chimney-user"></i></a>
+                    </div>
+                    <ul>
+                        <li><a href="/material"><i class="fas fa-screwdriver-wrench"></i>
+                            <p>Material de Apoyo</p></a></li>
+                        
+                        
+                        <li class="active"><a href="/galeria"><i class="fas fa-camera-retro"></i>
+                            <p>Galeria</p></a></li>
+                        
+                       
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+        </div>
+
+        <ul id="box-search">
+            <li><a href="/suma"><i class="fas fa-search"></i>Sumas</a></li>
+            <li><a href="/resta"><i class="fas fa-search"></i>Restas</a></li>
+            <li><a href="/multi"><i class="fas fa-search"></i>Multiplicación</a></li>
+            <li><a href="/galeria"><i class="fas fa-search"></i>Galeria</a></li>
+            <li><a href="/nosotros"><i class="fas fa-search"></i>Nosotros</a></li>
+            
+        </ul>
+
+        <div id="cover-ctn-search"></div>
+
+        </div>
+  
+   
+   <section class="galery">
+    <div class="containerimg">
+
+        <div class="slide" >
+            <div class="itemimg" style="background-image: url(/img/calculo.jpg);">
+                <div class="contentimg">
+                    <div class="nameimg">Practicando mi conocimiento</div>
+                    <div class="desimg">En esta actividad aprenderas a identificar los numeros necesarios para completar las operaciones matematicas y llegar al resultado.</div>
+                    <a href="/paginas/suma.html" class="button" ><input type="button" value="Empezar actividad"></a>
+                    
+                </div>
+            </div>
+
+            <div class="itemimg" style="background-image: url(/img/numbers.jpg);">
+                <div class="contentimg">
+                    <div class="nameimg">Restando numeros.</div>
+                    <div class="desimg">Repasa las restas de forma didactica con numeros aleatorios.</div>
+                    <button>Empezar actividad</button>
+                </div>
+            </div>
+
+            <div class="itemimg" style="background-image: url(/img/pared.jpg);">
+                <div class="contentimg">
+                    <div class="nameimg">Creando mis Operaciones.</div>
+                    <div class="desimg">Diviertete creando tus propias operaciones y desafia tu conocimiento.</div>
+                    <button>Empezar actividad</button>
+                </div>
+            </div>
+
+            <div class="itemimg" style="background-image: url(/img/memorama.jpg);">
+                <div class="contentimg">
+                    <div class="nameimg">Completando las tablas.</div>
+                    <div class="desimg">Repasa las tablas de multiplicar con los numeros didacticos como un memorama.</div>
+                    <button>Empezar actividad</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+   </section>
+
+    <!--Botón Ir arriba -->
+    <div id="button-up">
+        <i class="fas fa-upload"></i>
+    </div>
+    
+
+   <div class="footergaleria">
+    <iframe class="footerweb" src="/footer" frameborder="0" ></iframe>
+
+   </div>
+
+
+    
+    <script src="/js/galeria.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/buscador.js"></script>
+    <script src="/js/botonUp.js" ></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMates</title>
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--FONT QUICKSAND-->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/dragdrop.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/errorPage.css">
+    <link rel="stylesheet" href="/css/breadcrumbs.css">
+
+</head>
+<body>
+
+    <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+<div class="container">
+    <nav class="nav-main">
+        <a href="/"><img src="/img/edumatelogo.png" alt="edumates LOGO" class="nav-brand"></a>
+        
+        <ul class="nav-menu" id="nav-menu">
+            <li>
+                <a href="/suma">Practicando mi conocimiento</a>
+            </li>
+            <li>
+                <a href="/resta">Restando Numeros</a>
+            </li>
+            <li>
+                <a href="/crear">Crear Operaciones</a>
+            </li>
+            <li>
+                <a href="/multi">Tablas de Multiplicar</a>
+            </li>
+            
+            <li>
+                <a href="/galeria">Galeria</a>
+            </li>
+        </ul>
+
+        <div id="ctn-icon-search" >
+            <i class="fas fa-search" id="icon-search"></i>           
+            
+        </div>
+    </nav>
+    <hr>
+
+    <section>
+        <div class="wrapper">
+            <div class="breadcrumbs">
+                <div class="home">
+                    <a href="/"><i class="fas fa-house-chimney-user"></i></a>
+                </div>
+                <ul>
+                    <li><a href="/conocimiento"><i class="fas fa-graduation-cap"></i>
+                        <p>Conocimiento</p></a></li>
+                    
+                    
+                    <li class="active"><a href="/multi"><i class="fas fa-arrow-down-1-9"></i>
+                        <p>Tablas de Multiplicar</p></a></li>
+                    
+                   
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="ctn-bars-search">
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+    </div>
+
+    <ul id="box-search">
+        <li><a href="/suma"><i class="fas fa-search"></i>Sumas</a></li>
+        <li><a href="/resta"><i class="fas fa-search"></i>Restas</a></li>
+        <li><a href="/multi"><i class="fas fa-search"></i>Multiplicación</a></li>
+        <li><a href="/galeria"><i class="fas fa-search"></i>Galeria</a></li>
+        <li><a href="/nosotros"><i class="fas fa-search"></i>Nosotros</a></li>
+        
+    </ul>
+
+    <div id="cover-ctn-search"></div>
+
+
+    
+    <div class="containerError">
+            
+        <img src="/img/error404.png" alt="">
+        
+
+        <div class="boton">
+            <h2>Lo sentimos, esta sección no esta disponible en este momento</h2>
+
+        </div>
+
+    </div>
+          
+
+<iframe class="footerweb" src="/footer" frameborder="0"></iframe>
+
+<script src="/js/main.js"></script>
+<script src="/js/buscador.js"></script>
+
+    
+</body>
+</html>

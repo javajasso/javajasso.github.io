@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMates</title>
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--FONT QUICKSAND-->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/dragdrop.css">
+    <link rel="stylesheet" href="/css/breadcrumbs.css">
+
+    <!--BREADCRUMBS-->
+    <script src="https://kit.font-awesome.com/b99e675b6e.js"></script>
+
+</head>
+<body>
+
+    <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="container">
+        <nav class="nav-main">
+            <a href="/"><img src="/img/edumatelogo.png" alt="edumates LOGO" class="nav-brand"></a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li>
+                    <a href="/suma">Practicando mi conocimiento</a>
+                </li>
+                <li>
+                    <a href="/resta">Restando Numeros</a>
+                </li>
+                <li>
+                    <a href="/crear">Crear Operaciones</a>
+                </li>
+                <li>
+                    <a href="/multi">Tablas de Multiplicar</a>
+                </li>
+                
+                <li>
+                    <a href="/galeria">Galeria</a>
+                </li>
+            </ul>
+    
+            <div id="ctn-icon-search" >
+                <i class="fas fa-search" id="icon-search"></i>           
+                
+            </div>
+        </nav>
+        <hr>
+
+        <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+        </div>
+
+        <ul id="box-search">
+            <li><a href="/suma"><i class="fas fa-search"></i>Sumas</a></li>
+            <li><a href="/resta"><i class="fas fa-search"></i>Restas</a></li>
+            <li><a href="/multi"><i class="fas fa-search"></i>Multiplicación</a></li>
+            <li><a href="/galeria"><i class="fas fa-search"></i>Galeria</a></li>
+            <li><a href="/nosotros"><i class="fas fa-search"></i>Nosotros</a></li>
+            
+        </ul>
+
+        <div id="cover-ctn-search"></div>
+    
+        <section>
+            <div class="wrapper">
+                <div class="breadcrumbs">
+                    <div class="home">
+                        <a href="/"><i class="fas fa-house-chimney-user"></i></a>
+                    </div>
+                    <ul>
+                        <li><a><i class="fas fa-graduation-cap"></i>
+                            <p>Conocimiento</p></a></li>                        
+                        
+                        <li class="active"><a href="/suma"><i class="fas fa-circle-plus"></i>
+                            <p>Practicando Sumas</p></a></li>
+                        
+                       
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+
+        <section class="draggable-elements">
+            <i class="fas fa-1 draggable" draggable="true" style="color: #ff6384;" id="1"></i>
+            <i class="fas fa-2 draggable" draggable="true" style="color: #36a2eb;" id="2"></i>
+            <i class="fas fa-3 draggable" draggable="true" style="color: #ffce56;" id="3"></i>
+            <i class="fas fa-4 draggable" draggable="true" style="color: #9966ff;" id="4"></i>
+            <i class="fas fa-5 draggable" draggable="true" style="color: #4bc0c0;" id="5"></i>
+            
+        
+            <i class="fas fa-6 draggable" draggable="true" style="color: #ff6384;" id="6"></i>
+            <i class="fas fa-7 draggable" draggable="true" style="color: #36a2eb;" id="7"></i>
+            <i class="fas fa-8 draggable" draggable="true" style="color: #ffce56;" id="8"></i>
+            <i class="fas fa-9 draggable" draggable="true" style="color: #9966ff;" id="9"></i>
+            <i class="fas fa-1 draggable" draggable="true" style="color: #4bc0c0;" id="1"></i>
+            <i class="fas fa-0 draggable" draggable="true" style="color: #4bc0c0;" id="0"></i>
+        </section >
+        
+        
+        
+        
+        <section class="droppable-elements">
+           <div class="droppable" data-draggable-id="5"><span>Cinco</span></div>
+           <div class="droppable" data-draggable-id="3"><span>Tres</span></div>
+           <div class="droppable" data-draggable-id="1"><span>Uno</span></div>
+           <div class="droppable" data-draggable-id="4"><span>Cuatro</span></div>
+           <div class="droppable" data-draggable-id="2"><span>Dos</span></div>
+            
+        </section>
+        
+        <section class="droppable-elements">
+            <div class="droppable" data-draggable-id="9"><span>Nueve</span></div>
+            <div class="droppable" data-draggable-id="7"><span>Siete</span></div>
+            <div class="droppable" data-draggable-id="1"><span>Diez</span></div>
+            <div class="droppable" data-draggable-id="0"><span>Diez</span></div>
+            <div class="droppable" data-draggable-id="8"><span>Ocho</span></div>
+            <div class="droppable" data-draggable-id="6"><span>Seis</span></div>
+             
+         </section>
+
+<iframe class="footerweb" src="/footer" frameborder="0"></iframe>
+
+<script src="/js/main.js"></script>
+<script src="/js/buscador.js"></script>
+<script src="/js/dragdrop.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMates</title>
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--FONT QUICKSAND-->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--GOOGLE RECAPTCHA-->
+    <script>        
+               
+    
+        function onSubmit(token) {
+          alert('Gracias ' + document.getElementById('userName').value);
+        }
+
+        function validate(event) {
+          event.preventDefault();
+          if (document.getElementById("userName").value) {
+                grecaptcha.execute();                
+                alert("Corriendo captcha ");
+                
+          } else {
+            
+            alert("Por favor ingresa tu nombre ");
+
+            
+            
+          }
+        }
+    
+        function onload() {
+          var element = document.getElementById("captcha");
+          element.onclick = validate;
+                
+          
+        }
+
+       
+      </script>
+      
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/sesion.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="nav-main">
+            <a href="/"><img src="/img/edumatelogo.png" alt="edumates LOGO" class="nav-brand"></a>
+            
+            
+        </nav>
+        <hr>
+    
+
+        <!--FORMULARIO PARA REGISTRARSE-->
+        
+        <div class="container-form registro">
+            <div class="informacion">
+                <div class="info-childs">
+                    <h2>Bienvenido</h2>
+                    <p>Para unirte a nuestra comunidad didactica por favor Inicia Sesión con tus datos</p>
+                    <input type="button" value="Iniciar Sesión" id="signIn">
+                </div>
+            </div>
+
+            <div class="form-information">
+                <div class="form-information-childs">
+                    <h2>Crear una cuenta</h2>
+                    <div class="icons">
+                    <i class="fas fa-user"></i>
+                    
+                </div>
+                <p>o usa tu email para registrarte</p>
+                <form class="form formRegister" novalidate autocomplete="on">
+                    <div>
+                        <label >
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Nombre Usuario" name="userName" id="userName" autocomplete="on">
+                        </label>
+                        
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Correo Electrónico" name="userEmail" id="userEmail" autocomplete="on">
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword" id="userPassword" >
+                        </label>
+                    </div>                   
+                   
+
+                    <input type="submit" value="Registrarse"  id="btn-registro">
+                    <div class="alerta-error">Todos los campos son obligatorios - Verifique sus datos</div>
+                    <div class="alerta-exito">Tu registro fue exitoso</div>
+
+                   
+                </form>
+                </div>
+            </div>
+
+        </div>
+
+        <form class="captcha">
+            <div id="recaptcha" class="g-recaptcha"
+        data-sitekey="6LeNcMUpAAAAAF--2-A-8Hs3z3kqcZB9PKPLeqnQ"
+        data-callback="onSubmit"
+        data-size="invisible"></div>
+        <button id="captcha" class="captcha-btn">Probar Captcha</button>
+
+        </form>
+
+        
+    
+
+        <!--FORMULARIO PARA INICIAR SESIÓN-->
+        <div class="container-form login hidden">
+            <div class="informacion">
+                <div class="info-childs">
+                    <h2>Bienvenido Nuevamente</h2>
+                    <p>Para unirte a nuestra comunidad didactica por favor Inicia Sesión con tus datos</p>
+                    <input type="button" value="Registrarse" id="signUp">
+                </div>
+            </div>
+
+            <div class="form-information">
+                <div class="form-information-childs">
+                    <h2>Iniciar Sesión</h2>
+                    <div class="icons">
+                    <i class="fas fa-user"></i>
+
+                </div>
+                <p>o Iniciar sesión con una cuenta</p>
+                <form class="form form-login" novalidate>
+                    <div>
+                        <label>
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Correo Electrónico" name="userEmail">
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword">
+                        </label>
+                        <div class="alerta"></div>
+                    </div>                 
+                    <a href="/recuperar"><p>¿Olvidaste tu Contraseña?</p></a>
+                    
+                    <input type="submit" value="Iniciar Sesión">
+                    <div class="alerta-error">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito">Iniciaste sesion correctamente</div>
+                </form>
+                </div>
+            </div>
+
+        </div>
+    
+        <script>onload();</script>
+<script src="/js/sesion.js"></script>
+<script src="/js/register.js"></script>
+<script src="/js/iffe_login.js"></script>
+
+
+
+<!--
+<script src="/js/login2.js"></script>
+<script src="/js/login.js"></script>
+
+-->
+
+    
+</body>
+</html>

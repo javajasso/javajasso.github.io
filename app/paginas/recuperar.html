@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMates</title>
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--FONT QUICKSAND-->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/sesion.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="nav-main">
+            <a href="/"><img src="/img/edumatelogo.png" alt="edumates LOGO" class="nav-brand"></a>
+            
+            
+        </nav>
+        <hr>     
+
+        <!--FORMULARIO PARA RECUPERAR CONTRASEÑA-->
+        <div class="container-form registro">
+            <div class="informacion">
+                <div class="info-childs">
+                    <h2>Bienvenido</h2>
+                    <p>Proporciona tus datos para la recuperación</p>
+                    <input type="button" value="Iniciar Sesión" id="signIn">
+                </div>
+            </div>
+
+            <div class="form-information">
+                <div class="form-information-childs">
+                    <h2>Recuperación de Contraseña</h2>
+                    <div class="icons">
+                    <i class="fas fa-lock"></i>
+                    
+                </div>
+                <p>Enviar email de recuperación</p>
+                <form class="form formRegister" novalidate autocomplete="on">
+                    
+                    <div>
+                        <label>
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Correo Electrónico" name="userEmail" id="userEmail" autocomplete="on">
+                        </label>
+                    </div>
+                    <input type="submit" value="Enviar email"  id="btn-envEmail">
+
+                    <div class="icons">
+                        <i class="fas fa-lock"></i>
+                    <p>Reseteo de Contraseña</p>
+                    </div>
+                    <div>
+                        <label>
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Nueva Contraseña" name="newPassword" id="newPassword" >
+                        </label>
+                    </div> 
+
+                    <div>
+                        <label>
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Confirmar Contraseña" name="newPassword" id="confirmPassword" >
+                        </label>
+                    </div>            
+                   
+
+                    <input type="submit" value="Enviar Contraseña"  id="btn-envPass">
+                    <h2 style="color: white;">_</h2>
+
+                   <!--
+                    
+                   -->
+
+                   
+                </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+<script src="/js/main.js"></script>
+    
+</body>
+</html>
