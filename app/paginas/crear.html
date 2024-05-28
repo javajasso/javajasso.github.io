@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/css/dragdrop.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/breadcrumbs.css">
+    <link rel="stylesheet" href="/css/draw.css">
 
 </head>
 <body>
@@ -60,11 +61,12 @@
         </nav>
         <hr>
 
+
         <section>
             <div class="wrapper">
                 <div class="breadcrumbs">
                     <div class="home">
-                        <a href="/"><i class="fas fa-house-chimney-user"></i></a>
+                        <a href="/index"><i class="fas fa-house-chimney-user"></i></a>
                     </div>
                     <ul>
                         <li><a href="/conocimiento"><i class="fas fa-graduation-cap"></i>
@@ -95,13 +97,36 @@
 
         <div id="cover-ctn-search"></div>
 
-        <section>
-            
+        
+        
+
+        <section id="body">
+            <div>.</div>
+            <div class="text">
+                <h3>Dibuja las operaciones que aprendiste hoy o crea operaciones nuevas y lleva tu aprendizaje en un dibujo para tus padres 🎨</h3>
+            </div>
+            <canvas id="canvas"></canvas>
+            <div class="navdraw">
+                <div class="clr" data-clr="#000"></div>
+                <div class="clr" data-clr="red"></div>
+                <div class="clr" data-clr="orange"></div>
+                <div class="clr" data-clr="blue"></div>
+                <div class="clr" data-clr="purple"></div>
+                <div class="clr" data-clr="yellowgreen"></div>
+                <div class="clr" data-clr="yellow"></div>
+                <div class="clr" data-clr="#fff"></div>
+                <button class="clear">Limpiar</button>
+                <button class="save">Guardar</button>
+                <input type="color" value="#FFFFFF" id="favcolor">
+                <input type="range" name="ageInputName" id="ageInputId" value="5" 
+                min="1" max="10" oninput="ageOutputId.value = ageInputId.value">
+                <output id="ageOutputId"></output>
+                <div class="emoji">🎨</div>
+            </div>
 
         </section>
-    
-
-        <section class="draggable-elements">
+    <!--
+            <section class="draggable-elements">
             <i class="fas fa-1 draggable" draggable="true" style="color: #ff6384;" id="1"></i>
             <i class="fas fa-2 draggable" draggable="true" style="color: #36a2eb;" id="2"></i>
             <i class="fas fa-3 draggable" draggable="true" style="color: #ffce56;" id="3"></i>
@@ -140,11 +165,15 @@
          </section>
 
 
+    -->
+
+    
 <iframe class="footerweb" src="/footer" frameborder="0"></iframe>
 
 <script src="/js/main.js"></script>
 <script src="/js/buscador.js"></script>
 <script src="/js/dragdrop.js"></script>
+<script src="/js/draw.js"></script>
 
     
 </body>

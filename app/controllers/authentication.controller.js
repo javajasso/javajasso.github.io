@@ -144,21 +144,11 @@ function verificarCuenta(req, res){
     }
 }
 
-function recuperarPassword (req, res){
-    const usuarioRevision = usuarios.find(usuarios => usuarios.user === user && usuarios.verificado);
-    if(!usuarioRevision){
-        console.log("Error el nombre de usuario es requerido");
-        return res.status(400).json({status:"Error", message: "Error verificacion usuario"});
-        
-    }
-
-    const message = 'Verifica tu correo para entrar al link de reseteo de contraseña';
-}
 
 
 export const methods = {
     login, 
     register,
-    verificarCuenta,
-    recuperarPassword
+    verificarCuenta
+
 }

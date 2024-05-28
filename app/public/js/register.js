@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const resJson = await res.json();
         if(resJson.redirect){
             window.location.href = resJson.redirect;
-            alert("Has sido registrado ya puedes iniciar sesión ");
+            alert("Has sido registrado por favor verifica tu correo antes de empezar ");
 
             
             

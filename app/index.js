@@ -72,8 +72,8 @@ app.get("/footer", (req,res) => res.sendFile( __dirname + "/paginas/footer.html"
 app.get("/verificar/:token", authentication.verificarCuenta);
 
 //Rutas de recuperación de contraseña
-app.get("/recuperar", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/recuperar.html"));
-app.post("/recuperar/:token", authentication.recuperarPassword);
+//pp.get("/recuperar", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/recuperar.html"));
+//app.post("/recuperar/:token", authentication.recuperarPassword);
 
 
 

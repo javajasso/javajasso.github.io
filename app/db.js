@@ -1,13 +1,20 @@
 import mysql from 'mysql';
+import { 
+    DB_HOST,
+    DB_NAME,
+    DB_PASSWORD,
+    DB_USER,
+    DB_PORT
+} from './configD.js';
 
 async function conexion(){
     try {
         const conectar = await mysql.createConnection({
-            host: '127.0.0.1',
-            port: 3306,
-            database: 'edumates',
-            username: 'developer',
-            password: 'Developerweb1'
+            host: DB_HOST,
+            port: DB_PORT,
+            database: DB_NAME,
+            username: DB_USER,
+            password: DB_PASSWORD
         });
 
         console.log('Conexion a MySQL establecida');
