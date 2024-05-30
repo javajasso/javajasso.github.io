@@ -6,8 +6,10 @@ import morgan from 'morgan';
 //import fetch from 'node-fetch';
 import cookieParser from 'cookie-parser';
 
+
 //importando la conexion a la BD
 import conexion from './db.js';
+
 
 
 //codigo para habilitar __dirname en las rutas
@@ -74,6 +76,5 @@ app.get("/verificar/:token", authentication.verificarCuenta);
 //Rutas de recuperación de contraseña
 //pp.get("/recuperar", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/recuperar.html"));
 //app.post("/recuperar/:token", authentication.recuperarPassword);
-
 
 
