@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         
 
-        const res = await fetch("http://localhost:4000/api/login", {
+        const res = await fetch("https://edumateskids.onrender.com/api/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

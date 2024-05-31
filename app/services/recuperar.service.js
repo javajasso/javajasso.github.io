@@ -49,7 +49,7 @@ function crearMailRecuperacion(token){
     <h1>Recuperación de Contraseña - EDUMATES</h1>
     <p><strong>Hola ${direccion}</strong></p>
     <p>Hemos recibido una solicitud de recuperación de contraseña de este correo </p>
-    <a href="http://localhost:4000/recuperar/${token}" target="_blank" rel="noopener noreferrer">Click Aqui para Recuperar Contraseña</a>
+    <a href="https://edumateskids.onrender.com/recuperar/${token}" target="_blank" rel="noopener noreferrer">Click Aqui para Recuperar Contraseña</a>
     <p><strong>Edumates</strong></p>
     <p>Edumates Copyright</p>
     
