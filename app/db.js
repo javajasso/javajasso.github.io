@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 //mongodb://localhost:27017/edumateskids
-const DB_URI = 'mongodb://localhost:27017/edumateskids'
+const DB_URI = 'mongodb+srv://anajassov:TpBtN30lcQ4tCp8B@clusteredumateskids.u3aibbz.mongodb.net/edumatesKids?retryWrites=true&w=majority&appName=ClusterEdumatesKids'
 
 async function conexion(){
     try {
