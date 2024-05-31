@@ -1,5 +1,4 @@
 
-
 const formRegister = document.querySelector(".formRegister");
 const inputUser = document.querySelector(".formRegister input[type='text']");
 const inputEmail = document.querySelector(".formRegister input[type='email']");
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
          
         
         console.log(inputUser.value)        
-        const res = await fetch("https://edumateskids.onrender.com/api/registro", {
+        const res = await fetch("/api/registro", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
