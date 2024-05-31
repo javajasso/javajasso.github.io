@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
          
         
         console.log(inputUser.value)        
-        const res = await fetch("http://localhost:4000/api/registro", {
+        const res = await fetch("https://edumateskids.onrender.com/api/registro", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
