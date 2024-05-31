@@ -50,7 +50,7 @@ function crearMailVerificacion(token){
     <p>Se ha creado una cuenta en el sitio <strong>Edumates.com</strong> con este correo electrónico.</p>
     <p>Si esta cuenta no fue creada por usted, por favor descarte este correo.</p>
     <p>Si usted ha creado la cuenta por favor consulte el siguiente link para su verificación</p>
-    <a href="http://localhost:4000/verificar/${token}" target="_blank" rel="noopener noreferrer">Click Aqui para Verificar Cuenta</a>
+    <a href="https://edumateskids.onrender.com/verificar/${token}" target="_blank" rel="noopener noreferrer">Click Aqui para Verificar Cuenta</a>
     <p><strong>Edumates</strong></p>
     <p>Edumates Copyright</p>
     
