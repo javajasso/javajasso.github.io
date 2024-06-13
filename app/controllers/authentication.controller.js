@@ -6,13 +6,9 @@ import { enviarVerificacionEmail } from "./../services/mail.service.js";
 
 dotenv.config();
 
-export const usuarios = [{
-    user: 'Caleb',
-    email: 'isabellabeauty.mk@gmail.com',
-    password: '$2a$05$YVTEJxMQbefYpaOGv58O4.BkjFQwjjj/ekRt9FUz.3o9Wcg0t8q.S',
-    verificado: false
-    
-}]
+
+import usuarios from "../modelos/user.js";
+
 
 
 async function login(req,res){
@@ -66,12 +62,15 @@ async function register(req,res){
         //res.status(400).send({status: "Error", message: "Los datos son incorrectos"})
     }
 
-
-    const usuarioRevision = usuarios.find(usuarios => usuarios.email === email);
-    if(usuarioRevision){
-        console.log("Este email ya fue usado en una cuenta");
-        return res.status(400).json({status:"Error",message: "Este email ya fue usado en una cuenta"})
-        
+    try{
+        const usuarioRevision = usuarios.find(usuarios => usuarios.email === email);
+        if(usuarioRevision){
+            console.log("Este email ya fue usado en una cuenta");
+            return res.status(400).json({status:"Error",message: "Este email ya fue usado en una cuenta"})
+            
+        }
+    }catch (error) {
+        console.error(error);
     }
     const salt = await bcryptjs.genSalt(5);
     const hashPassword = await bcryptjs.hash(password,salt)
@@ -98,7 +97,7 @@ async function register(req,res){
         password: hashPassword, verificado: false
     }
     console.log("Usuario agregado");
-    usuarios.push(nuevoUsuario);
+    usuarios.create(nuevoUsuario);
     console.log("Usuario cifrado");
     console.log(nuevoUsuario);  
     console.log("Usuarios");
