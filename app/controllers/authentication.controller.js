@@ -14,13 +14,7 @@ export const usuarios = [{
     
     }]
 
-    const usuarios = ({
-    user: 'Caleb',
-    email: 'isabellabeauty.mk@gmail.com',
-    password: '$2a$05$YVTEJxMQbefYpaOGv58O4.BkjFQwjjj/ekRt9FUz.3o9Wcg0t8q.S',
-    verificado: false
-    
-    });
+
 
 
 //import usuarios from "../modelos/user.js";
