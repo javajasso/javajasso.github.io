@@ -51,8 +51,8 @@ app.get("/galeria", (req,res) => res.sendFile(__dirname +  "/paginas/galeria.htm
 app.get("/nosotros", (req,res) => res.sendFile( __dirname + "/paginas/nosotros.html"));
 app.get("/mapa", (req,res) => res.sendFile( __dirname + "/paginas/mapa.html"));
 app.get("/error", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/error.html"));
-app.get("/conocimiento", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/conocimiento.html"));
-app.get("/material", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/material.html"));
+app.get("/conocimiento", (req,res) => res.sendFile( __dirname + "/paginas/conocimiento.html"));
+app.get("/material", (req,res) => res.sendFile( __dirname + "/paginas/material.html"));
 
 
 //Rutas del contenido del proyecto soloAdmin

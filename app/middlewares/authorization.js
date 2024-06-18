@@ -1,7 +1,7 @@
 import jsonwebtoken from "jsonwebtoken";
 import dotenv from "dotenv";
-//import { usuarios } from "../controllers/authentication.controller.js";
-import usuarios from "../modelos/user.js";
+import { usuarios } from "../controllers/authentication.controller.js";
+//import usuarios from "../modelos/user.js";
 
 
 dotenv.config();

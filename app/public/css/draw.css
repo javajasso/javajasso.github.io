@@ -137,3 +137,72 @@ input[type="color"] {
     padding-bottom: 10px;
 }
 
+
+@media (max-width: 800px){
+    .navdraw {
+        width: 80%;
+        height: 40px;
+        position: absolute;
+    }
+
+    .clr {
+        height: 15px;
+        width: 15px;
+    }
+
+    .emoji {
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    input[type="color"] {
+        width: 40px;
+        height: 20px;
+    }
+
+    button{       
+        font-size: 10px;
+      
+    }
+
+    #ageOutputId {
+        font-size: 7.5pt;
+    }
+}
+
+@media (max-width: 700px){
+    
+    
+    .navdraw {
+        width: auto;
+        height: 40px;
+        display: inline-table;
+        position: left;
+        
+    }
+
+    .clr {
+        height: 15px;
+        width: 15px;
+        display: inline-table;
+    }
+
+    .emoji {
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    input[type="color"] {
+        width: 40px;
+        height: 20px;
+    }
+
+    button{       
+        font-size: 5px;
+      
+    }
+
+    #ageOutputId {
+        font-size: 7.5pt;
+    }
+}

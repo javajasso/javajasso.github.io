@@ -6,8 +6,24 @@ import { enviarVerificacionEmail } from "./../services/mail.service.js";
 
 dotenv.config();
 
+export const usuarios = [{
+    user: 'Caleb',
+    email: 'isabellabeauty.mk@gmail.com',
+    password: '$2a$05$YVTEJxMQbefYpaOGv58O4.BkjFQwjjj/ekRt9FUz.3o9Wcg0t8q.S',
+    verificado: false
+    
+    }]
 
-import usuarios from "../modelos/user.js";
+    const usuarios = ({
+    user: 'Caleb',
+    email: 'isabellabeauty.mk@gmail.com',
+    password: '$2a$05$YVTEJxMQbefYpaOGv58O4.BkjFQwjjj/ekRt9FUz.3o9Wcg0t8q.S',
+    verificado: false
+    
+    });
+
+
+//import usuarios from "../modelos/user.js";
 
 
 
@@ -125,7 +141,8 @@ function verificarCuenta(req, res){
             {expiresIn:process.env.JWT_EXPIRATION});
     
             const cookieOption = {
-                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 1000),
+                //expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 1000),
+                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000),
                 path: "/"
             }
 
@@ -135,6 +152,10 @@ function verificarCuenta(req, res){
                 res.cookie("jwt",token,cookieOption);
                 console.log("Usuario Verificado");
                 res.redirect("/admin");
+
+                setTimeout(() => {
+                    alert("Ya te has terminado todos los intentos del nivel");
+                }, process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000);
     } catch (err) {
         res.status(500);
         console.log("fallo la verificación")
