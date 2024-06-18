@@ -58,6 +58,12 @@ async function login(req,res){
         }
             res.cookie("jwt",token,cookieOption);
             res.send({status:"ok", message:"Usuario loggeado", redirect:"/"})
+
+            
+            setTimeout(() => {
+                alert("Ya te has terminado todos los intentos del nivel");
+            }, process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000);
+
         
 }
 
