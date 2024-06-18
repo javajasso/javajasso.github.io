@@ -58,7 +58,8 @@ async function login(req,res){
         {expiresIn:process.env.JWT_EXPIRATION});
 
         const cookieOption = {
-            expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 1000),
+            //expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 1000),
+            expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000),
             path: "/"
         }
             res.cookie("jwt",token,cookieOption);
