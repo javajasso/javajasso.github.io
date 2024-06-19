@@ -6,6 +6,7 @@
     const inputPass = document.querySelector(".form-login input[type='password']");
     const alertaError = document.querySelector(".form-login .alerta-error");
     const alertaExito = document.querySelector(".form-login .alerta-exito");
+    const inputLogin = document.getElementById ("btn-login");
     
     
     //constantes para validar los input 
@@ -26,7 +27,7 @@
             e.preventDefault();
             
 
-            const res = await fetch("https://edumateskids.onrender.com/api/login", {
+            const res = await fetch("/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -41,7 +42,7 @@
         
         if(!res.ok && !enviarFormulario()){
         
-        console.log("Por favor rellena los campos correctamente")
+        console.log("Necesitas verificar tu correo")
         alertaExito.classList.remove("alertaExito");
         alertaError.classList.add("alertaError");
         setTimeout(() => {
@@ -69,7 +70,7 @@
         })
     
         inputPass.addEventListener("input", () => {
-            passMessage =  "La contraseña tiene que ser de 8  digitos y debe incluir al menos una letra mayúscula y un número"
+            passMessage =  "La contraseña tiene que ser de 8  digitos, debe iniciar con una letra mayúscula puede contener numeros - Ej: Ameli#56"
             validarCampo(passwordRegex,inputPass, passMessage)
     
         })
@@ -85,11 +86,15 @@
             estadoValidacionCampos[campo.name] = true;
             console.log(estadoValidacionCampos);
             campo.parentElement.classList.remove("error");
+            inputLogin.style.display = "block"
+
     
         }else {
             estadoValidacionCampos[campo.name] = false;
             mostrarAlerta(campo.parentElement.parentElement, mensaje);
             campo.parentElement.classList.add("error");
+            inputLogin.style.display = "none"
+
         }
         
     }

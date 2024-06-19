@@ -5,6 +5,7 @@ const inputEmail = document.querySelector(".formRegister input[type='email']");
 const inputPass = document.querySelector(".formRegister input[type='password']");
 const alertaError = document.querySelector(".alerta-error");
 const alertaExito = document.querySelector(".alerta-exito");
+const inputRegister = document.getElementById ("btn-registro");
 
 
 
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     inputPass.addEventListener("input", () => {
-        passMessage = "La contraseña tiene que ser de 8  digitos y debe incluir al menos una letra mayúscula y un número"
+        passMessage = "La contraseña tiene que ser de 8  digitos, debe iniciar con una letra mayúscula puede contener numeros - Ej: Ameli#56"
         validarCampo(passwordRegex,inputPass,passMessage)
 
     })
@@ -108,11 +109,15 @@ function validarCampo(regularExpression, campo, mensaje) {
         estadoValidacionCampos[campo.name] = true;
         console.log(estadoValidacionCampos);
         campo.parentElement.classList.remove("error");
+        inputRegister.style.display = "block"
+
 
     }else {
         estadoValidacionCampos[campo.name] = false;
         mostrarAlerta(campo.parentElement.parentElement, mensaje);
         campo.parentElement.classList.add("error");
+        inputRegister.style.display = "none"
+
 
     }
     

@@ -23,6 +23,7 @@ export const usuarios = [{
 
 async function login(req,res){
     console.log(req.body);
+    const user = req.body.userName;
     const email = req.body.userEmail;
     const password = req.body.userPassword;
 
@@ -32,38 +33,52 @@ async function login(req,res){
         
         
     }
-    const usuarioRevision = usuarios.find(usuarios => usuarios.user === user && usuarios.verificado);
-    if(!usuarioRevision){
-        console.log("Error durante el login el usuario es diferente al registrado");
-        return res.status(400).json({status:"Error", message: "Error durante el login"});
+    try{
         
-    }
-
-    const loginCorrecto = await bcryptjs.compare(password, usuarioRevision.password)
-    console.log(loginCorrecto);
-    if(!loginCorrecto){
-        console.log("Error durante el login la contraseña es diferente a la registada");
-        return res.status(400).json({status:"Error", message: "Error durante el login"});
-
-    }
-    const token = jsonwebtoken.sign(
-        {user:usuarioRevision.user},
-        process.env.JWT_SECRET,
-        {expiresIn:process.env.JWT_EXPIRATION});
-
-        const cookieOption = {
-            //expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 1000),
-            expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000),
-            path: "/"
-        }
-            res.cookie("jwt",token,cookieOption);
-            res.send({status:"ok", message:"Usuario loggeado", redirect:"/"})
-
+        const usuarioRevision = usuarios.find(usuarios => usuarios.email === email);
+    // const usuarioRevision = await usuarios.findOne({ usuarios: email}).exec();
+        if(!usuarioRevision){
+            console.log("Error durante el login el usuario es diferente al registrado");
+            return res.status(400).json({status:"Error", message: "Error durante el login"});
             
-            setTimeout(() => {
-                alert("Ya te has terminado todos los intentos del nivel");
-            }, process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000);
+        }
+        console.log("Inicio Existoso")
+        
+        const loginCorrecto = await bcryptjs.compare(password, usuarioRevision.password)
+        
+       
+        if(!loginCorrecto){
+            console.log("Error durante el login la contraseña es diferente a la registada");
+            return res.status(400).json({status:"Error", message: "Error durante el login"});
 
+        }
+
+        console.log("Password Check")
+
+        const token = jsonwebtoken.sign(
+            {user:usuarioRevision.user},
+            process.env.JWT_SECRET,
+            {expiresIn:process.env.JWT_EXPIRATION});
+
+            const cookieOption = {
+                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 10 * 60 * 1000),
+                path: "/"
+            }
+                res.cookie("jwt",token,cookieOption);
+                //res.send({status:"ok", message:"Usuario loggeado", redirect:"/"})
+
+                const indexUsuarioActualizar = usuarios.findIndex(usuario => usuario.email === email);
+                usuarios[indexUsuarioActualizar].verificado = true;
+
+                res.json({ status: "ok", message: "Usuario loggeado", redirect: "/" });
+
+                              
+        }catch (error) {
+            console.error(error);
+            res.status(500).json({ status: "Error", message: "Error en el servidor." });
+        }
+
+    
         
 }
 
@@ -114,7 +129,7 @@ async function register(req,res){
         password: hashPassword, verificado: false
     }
     console.log("Usuario agregado");
-    usuarios.create(nuevoUsuario);
+    usuarios.push(nuevoUsuario);
     console.log("Usuario cifrado");
     console.log(nuevoUsuario);  
     console.log("Usuarios");
@@ -143,7 +158,7 @@ function verificarCuenta(req, res){
     
             const cookieOption = {
                 //expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 1000),
-                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000),
+                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 10 * 60 * 1000),
                 path: "/"
             }
 
@@ -155,8 +170,9 @@ function verificarCuenta(req, res){
                 res.redirect("/admin");
 
                 setTimeout(() => {
-                    alert("Ya te has terminado todos los intentos del nivel");
-                }, process.env.JWT_COOKIE_EXPIRES * 3 * 60 * 1000);
+                    alert("Tu sesión ha expirado");
+                    console.log("Tu sesión ha sido expirada")
+                }, process.env.JWT_COOKIE_EXPIRES * 10 * 60 * 1000);
     } catch (err) {
         res.status(500);
         console.log("fallo la verificación")

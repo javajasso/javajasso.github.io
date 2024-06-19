@@ -277,7 +277,10 @@ function corregir(){
 
     console.log("*",countEnter);
     if(operacion_actual == "+" && countEnter == 11){     
-                      
+            msj_correccion.innerHTML = "";        
+            p.textContent = "Has alcanzado todos los intentos";
+            msj_vacio.appendChild(p);
+            msj_vacio.remove();  
 
             if (incorrectas >=6){
                 alert("Ya te has terminado todos los intentos del nivel");
@@ -302,6 +305,10 @@ function corregir(){
             
          }else if(operacion_actual == "+" &&  countEnter == 20+2){
                  alert("¡Felicidades! Has completado el segundo nivel de sumas ");
+                 msj_correccion.innerHTML = "";        
+                p.textContent = "Has alcanzado todos los intentos";
+                msj_vacio.appendChild(p);
+                msj_vacio.remove();       
                 
                 if (incorrectas >=6){
                     alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
@@ -377,7 +384,7 @@ function corregir(){
             msj_vacio.remove();
             if (incorrectas >=6){                
                 alert("Ya te has terminado todos los intentos del nivel");
-                alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
+                alert(" Tu puntuación es: "+ (correcta) +" de 10 \n Puedes intentarlo en otra ocasion");
                 alert("Debes seguir practicando las multiplicaciones");
                 nuevoProducto();
                 incorrectas = 0;
@@ -451,7 +458,7 @@ function corregir(){
                     correcta = 0;
                     
                 }     
-    }   
+    }  
 
            
 }
