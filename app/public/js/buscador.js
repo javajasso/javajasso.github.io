@@ -1,4 +1,4 @@
-//ejevución de funciones
+//ejecución de funciones
 document.getElementById("icon-search").addEventListener("click", mostrar_buscador);
 document.getElementById("cover-ctn-search").addEventListener("click", ocultarBuscador);
 

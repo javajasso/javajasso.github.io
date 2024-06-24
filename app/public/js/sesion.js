@@ -9,6 +9,7 @@ btnSignIn.addEventListener("click", _e => {
     containerformLogin.classList.remove("hidden");
 })
 
+//esconder formulario register
 btnSignUp.addEventListener("click", _e => {
     containerformLogin.classList.add("hidden");
     containerformRegister.classList.remove("hidden");

@@ -1,7 +1,6 @@
 document.querySelector('.menu-btn').addEventListener('click', () => {
    document.querySelector('.nav-menu').classList.toggle('show');
-   
-
+   mostrarMenu();
    console.log('yes!!!')
 });
 
@@ -31,7 +30,7 @@ function redireccionarface() {
 
 
 /*Botón Ir arriba */
-document.getElementById("button-up").addEventListener("click", scrollUp);
+//document.getElementById("button-up").addEventListener("click", scrollUp);
 
 function scrollUp(){
    //para asegurar de que obtenemos el scroll

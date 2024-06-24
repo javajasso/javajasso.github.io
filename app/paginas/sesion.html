@@ -16,42 +16,7 @@
     <!--SCROLL REVEAL-->
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!--GOOGLE RECAPTCHA-->
-    <script>        
-               
-    
-        function onSubmit(token) {
-          alert('Gracias ' + document.getElementById('userName').value);
-        }
-
-        function validate(event) {
-          event.preventDefault();
-          if (document.getElementById("userName").value) {
-                grecaptcha.execute();                
-                alert("Corriendo captcha ");
-                
-          } else {
-            
-            alert("Por favor ingresa tu nombre ");
-
-            
-            
-          }
-        }
-    
-        function onload() {
-          var element = document.getElementById("captcha");
-          element.onclick = validate;
-                
-          
-        }
-
-       
-      </script>
-      
-
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        
+           
 
     <!--CUSTOM CSS-->
     <link rel="stylesheet" href="/css/styles.css">
@@ -114,6 +79,7 @@
                    
 
                     <input type="submit" value="Registrarse"  id="btn-registro">
+
                     <div class="alerta-error">Todos los campos son obligatorios - Verifique sus datos</div>
                     <div class="alerta-exito">Tu registro fue exitoso</div>
 
@@ -124,16 +90,7 @@
 
         </div>
 
-        <form class="captcha">
-            <div id="recaptcha" class="g-recaptcha"
-        data-sitekey="6LeNcMUpAAAAAF--2-A-8Hs3z3kqcZB9PKPLeqnQ"
-        data-callback="onSubmit"
-        data-size="invisible"></div>
-        <button id="captcha" class="captcha-btn">Probar Captcha</button>
-
-        </form>
-
-        
+                
     
 
         <!--FORMULARIO PARA INICIAR SESIÓN-->
@@ -180,7 +137,7 @@
 
         </div>
     
-        <script>onload();</script>
+        
 <script src="/js/sesion.js"></script>
 <script src="/js/register.js"></script>
 <script src="/js/iffe_login.js"></script>

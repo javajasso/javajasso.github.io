@@ -11,7 +11,6 @@ import cookieParser from 'cookie-parser';
 import conexion from './db.js';
 
 
-
 //codigo para habilitar __dirname en las rutas
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -51,6 +50,8 @@ app.get("/galeria", (req,res) => res.sendFile(__dirname +  "/paginas/galeria.htm
 app.get("/nosotros", (req,res) => res.sendFile( __dirname + "/paginas/nosotros.html"));
 app.get("/mapa", (req,res) => res.sendFile( __dirname + "/paginas/mapa.html"));
 app.get("/error", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/error.html"));
+app.get("/errorSesion", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/errorSesion.html"));
+app.get("/error2", authorization.soloAdmin,(req,res) => res.sendFile( __dirname + "/paginas/errorVideo.html"));
 app.get("/conocimiento", (req,res) => res.sendFile( __dirname + "/paginas/conocimiento.html"));
 app.get("/material", (req,res) => res.sendFile( __dirname + "/paginas/material.html"));
 

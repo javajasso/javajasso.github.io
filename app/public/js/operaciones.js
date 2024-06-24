@@ -207,16 +207,15 @@ function nuevaDivisionN2(){
     num2.innerHTML = n2;
     respuesta_usuario.focus();
 
-
 }
+
 
 //función que controla si la respuesta es correcta
 let countEnter = 0;
 let correcta = 0;
 let incorrectas = 0;
 
-function corregir(){
-
+function corregir(){    
 
 
     var p = document.createElement("p");
@@ -228,9 +227,9 @@ function corregir(){
     }
     
    
-
+    countEnter++;
     let solucion;
-    //se arma la operación que se genero para visusalizar el resultado
+    //se arma la operación que se genero para visualizar el resultado
     let operacion = n1 + operacion_actual + n2;
     solucion = eval(operacion);
 
@@ -244,26 +243,24 @@ function corregir(){
        correcta++;
        console.log(correcta);
 
-    }else {              
-        i.className = "fa-regular fa-face-frown";
-        p.textContent = "La respuesta correcta es: "+ solucion;
+    }else { 
+        p.textContent = "La respuesta correcta es: "+ solucion;             
+        i.className = "fa-regular fa-face-frown";        
         msj_vacio.appendChild(p);
         incorrectas ++;
         console.log(incorrectas);
     } 
 
-   
-    
-    
-    
-    countEnter++;
+   //Se agrega el elemento al contenedor de las correcciones
+   msj_correccion.appendChild(i);
 
-    //Se agrega el elemento al contenedor de las correcciones
-    msj_correccion.appendChild(i);
-
+    
+    
+    setTimeout(function() {
+        
     //Verificar el tipo de operacion actual para generar una nueva
     if(operacion_actual == "+"){
-        nuevaSuma();
+        nuevaSuma();        
     } else if(operacion_actual == "-"){        
         nuevaResta();
     } else if(operacion_actual == "*"){
@@ -274,194 +271,212 @@ function corregir(){
 
     //Limpiar el input
     respuesta_usuario.value = "";
+    
+    }, 2000);
+
+   
 
     console.log("*",countEnter);
-    if(operacion_actual == "+" && countEnter == 11){     
+    if(operacion_actual == "+" && countEnter > 4 && countEnter < 6){     
             msj_correccion.innerHTML = "";        
             p.textContent = "Has alcanzado todos los intentos";
             msj_vacio.appendChild(p);
             msj_vacio.remove();  
 
-            if (incorrectas >=6){
-                alert("Ya te has terminado todos los intentos del nivel");
-                alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
+            if (incorrectas >=3){
+                alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");
                 nuevaSuma();
                 incorrectas = 0;
-                console.log("Nivel Terminado")           
+                console.log(" Intento terminado")           
                 msj_correccion.innerHTML = ""; 
+                countEnter = 0;
                      
                 
-            }else if(correcta >=6){
-                alert("¡Felicidades! Has completado el primer nivel de sumas \n Tu puntuación es: "+ correcta +" de 10" );
+            }else if(correcta >=3){
+                alert("¡Felicidades! Has completado el primer nivel de sumas \n Tu puntuación es: "+ correcta +" de 5" );
                 alert("Buen puntaje pasemos al nivel 2");
                 nuevaSumaN2();
                 correcta = 0;
                 console.log("Nivel Terminado")           
-                msj_correccion.innerHTML = "";        
+                msj_correccion.innerHTML = "";   
+                
+
                 
             }
 
             
             
-         }else if(operacion_actual == "+" &&  countEnter == 20+2){
+         }else if(operacion_actual == "+" &&  countEnter > 9 && countEnter < 11){
                  alert("¡Felicidades! Has completado el segundo nivel de sumas ");
                  msj_correccion.innerHTML = "";        
-                p.textContent = "Has alcanzado todos los intentos";
-                msj_vacio.appendChild(p);
-                msj_vacio.remove();       
+                 p.textContent = "Has alcanzado todos los intentos";
+                 msj_vacio.appendChild(p);
+                 msj_vacio.remove();
+                  
                 
-                if (incorrectas >=6){
-                    alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
-                    alert("Debes seguir practicando las sumas");
+                if (incorrectas >=3){
+                    alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");                    
                     incorrectas = 0;
-                    btnResta();
-                    sumaB.style.display = 'none';    
+                    nuevaSumaN2();                    
+                    countEnter = 0;
+
 
                                 
                 }else {
                     alert("¡Felicidades! Has completado el segundo nivel de sumas ");
-                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 10 \n Ahora practiquemos con restas");
+                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 5 \n Ahora practiquemos con restas");
                     correcta = 0;
                     btnResta();
                     sumaB.style.display = 'none';    
-
+                    countEnter = 0;
                                    
 
                 }               
 
                 
-    } else if(operacion_actual == "-" && countEnter == 30+3){   
+    } else if(operacion_actual == "-" && countEnter > 4 && countEnter < 6){   
              
             console.log("Nivel Terminado")           
             msj_correccion.innerHTML = "";        
             p.textContent = "Has alcanzado todos los intentos";
             msj_vacio.appendChild(p);
             msj_vacio.remove();
-            if (incorrectas >=6){
-                alert("Ya te has terminado todos los intentos del nivel");
-                alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
+            if (incorrectas >=3){
+                alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");                    
                 nuevaResta();
                 incorrectas = 0;
+                countEnter = 0;
 
-            }else if(correcta >=6){
-                alert("¡Felicidades! Has completado el primer nivel de restas \n Tu puntuación es: "+ correcta +" de 10" );
+            }else if(correcta >=3){
+                alert("¡Felicidades! Has completado el primer nivel de restas \n Tu puntuación es: "+ correcta +" de 5" );
                 alert("Buen puntaje pasemos al nivel 2");
                 nuevaRestaN2();
                 correcta = 0;
             }
             
-    }else if(operacion_actual == "-" &&  countEnter == 40+4){
+        }else if(operacion_actual == "-" &&  countEnter > 9 && countEnter < 11){
                 alert("¡Felicidades! Has completado el segundo nivel de restas ");
                 console.log("Nivel 2 Terminado")           
                 msj_correccion.innerHTML = "";        
                 p.textContent = "Has alcanzado todos los intentos";
                 msj_vacio.appendChild(p);
                 msj_vacio.remove();
-                if (incorrectas >=6){
-                    alert("Ya te has terminado todos los intentos del nivel");
-                    alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
+
+                if (incorrectas >=3){
+                    alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");     
                     incorrectas = 0;
-                    btnProducto();
+                    nuevaRestaN2();
                     restaB.style.display = 'none';    
-                    
+                    countEnter = 0;
 
 
                 }else {
                     alert("¡Felicidades! Has completado el segundo nivel de restas ");
-                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 10 \n Ahora practiquemos con multiplicaciones");
+                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 5 \n Ahora practiquemos con multiplicaciones");
                     correcta = 0;
                     btnProducto();
-                    restaB.style.display = 'none';                    
+                    restaB.style.display = 'none';
+                    countEnter = 0;                    
                     
                 }     
              
        
-    } else if(operacion_actual == "*" && countEnter == 50+5){
+    } else if(operacion_actual == "*" && countEnter > 4 && countEnter < 6){
             console.log("Nivel Terminado")           
             msj_correccion.innerHTML = "";        
             p.textContent = "Has alcanzado todos los intentos";
             msj_vacio.appendChild(p);
             msj_vacio.remove();
-            if (incorrectas >=6){                
-                alert("Ya te has terminado todos los intentos del nivel");
-                alert(" Tu puntuación es: "+ (correcta) +" de 10 \n Puedes intentarlo en otra ocasion");
+            if (incorrectas >=3){                
+                alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");     
                 alert("Debes seguir practicando las multiplicaciones");
                 nuevoProducto();
                 incorrectas = 0;
+                countEnter = 0;
 
-            }else if(correcta >=6){
-                alert("¡Felicidades! Has completado el primer nivel de multiplicaciones \n Tu puntuación es: "+ correcta +" de 10" );
+            }else if(correcta >=3){
+                alert("¡Felicidades! Has completado el primer nivel de multiplicaciones \n Tu puntuación es: "+ correcta +" de 5" );
                 alert("Buen puntaje pasemos al nivel 2");
                 nuevoProductoN2();
                 correcta = 0;
+
             }
             
-    }else if(operacion_actual == "*" &&  countEnter == 60+6){
+        }else if(operacion_actual == "*" &&  countEnter > 9 && countEnter < 11){
                 alert("¡Felicidades! Has completado el segundo nivel de multiplicaciones ");
-                console.log("Nivel 2 Terminado")           
+                console.log("Nivel 2 Multiplcaciones Terminado")           
                 msj_correccion.innerHTML = "";        
                 p.textContent = "Has alcanzado todos los intentos";
                 msj_vacio.appendChild(p);
                 msj_vacio.remove();
-                if (incorrectas >=6){
-                    alert("Ya te has terminado todos los intentos del nivel");
-                    alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
-                    btnDividir();
-                    multiB.style.display = 'none';   
-                    incorrectas = 0;                 
+                if (incorrectas >=3){
+                    alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");     
+                    nuevoProductoN2();
+                    incorrectas = 0;   
+                    countEnter = 0;
+
 
                 }else {
                     alert("¡Felicidades! Has completado el segundo nivel de multiplicaciones ");
-                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 10 \n Ahora practiquemos con divisiones");
+                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 5 \n Ahora practiquemos con divisiones");
                     btnDividir();
                     multiB.style.display = 'none';      
-                    correcta = 0;              
+                    correcta = 0;
+                    countEnter = 0;
 
                 }     
         
-    } else if(operacion_actual == "/" && countEnter == 70+7){
-        console.log("Nivel Terminado")           
+    } else if(operacion_actual == "/" && countEnter > 4 && countEnter < 6){        
             msj_correccion.innerHTML = "";        
             p.textContent = "Has alcanzado todos los intentos";
             msj_vacio.appendChild(p);
             msj_vacio.remove();
-            if (incorrectas >=6){                
-                alert("Ya te has terminado todos los intentos del nivel");
-                alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
+
+            if (incorrectas >=3){                
+                alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");     
                 alert("Debes seguir practicando las divisiones");
                 nuevaDivision();
                 incorrectas = 0;
+                countEnter = 0;
 
-            }else if(correcta >=6){
-                alert("¡Felicidades! Has completado el primer nivel de divisiones \n Tu puntuación es: "+ correcta +" de 10" );
+            }else if(correcta >=3){
+                alert("¡Felicidades! Has completado el primer nivel de divisiones \n Tu puntuación es: "+ correcta +" de 5" );
                 alert("Buen puntaje pasemos al nivel 2");
+                console.log("Nivel 1 División Terminado");      
                 nuevaDivisionN2();
                 correcta = 0;
             }
             
-    }else if(operacion_actual == "/" &&  countEnter == 80+8){
-                alert("¡Felicidades! Has completado el segundo nivel de divisiones ");
-                console.log("Nivel 2 Terminado")           
+        }else if(operacion_actual == "/" &&  countEnter > 9 && countEnter < 11){
+                          
                 msj_correccion.innerHTML = "";        
                 p.textContent = "Has alcanzado todos los intentos";
                 msj_vacio.appendChild(p);
                 msj_vacio.remove();
-                if (incorrectas >=6){
-                    alert("Ya te has terminado todos los intentos del nivel");
-                    alert(" Tu puntuación es: "+ (11-incorrectas) +" de 10 \n Puedes intentarlo en otra ocasion");
-                    divB.style.display = 'none';  
-                    incorrectas = 0;                  
-                }else {
+
+                if (incorrectas >=3){
+                    alert("Continua practicando en este nivel  \n Tu puntuación es: "+ (correcta) +" de 5");     
+                    nuevaDivisionN2();
+                    incorrectas = 0; 
+                    countEnter = 0;  
+                }else  if(correcta >=3){
                     alert("¡Felicidades! Has completado el segundo nivel de divisiones ");
-                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 10");
-                    divB.style.display = 'none';                    
+                    alert("Perfecto!! \n Tu puntuación es: "+ (correcta) +" de 5");
+                    console.log("Nivel 2 División Terminado") 
+                    divB.style.display = 'block';                    
                     correcta = 0;
+                    countEnter = 0; 
+                    sumaB.style.display = 'block'; 
+                    restaB.style.display = 'block';    
+                    multiB.style.display = 'block';
+                    divB.style.display = 'block';                    
                     
                 }     
-    }  
-
+    }   
+    
            
 }
+
 
 //evento onKeydown para detectar cuando el usuario presiona Enter
 //llamar a la funcion corregir
@@ -470,7 +485,8 @@ function corregir(){
 respuesta_usuario.onkeydown = function(e) {
     var ev = document.all ? window.event : e;
     if(ev.keyCode == 13){
-        corregir();
+        setTimeout(corregir(), 2000);
+        
 
     }
 }
@@ -483,4 +499,9 @@ function activarBoton(idBoton){
     document.getElementById("producto").className="";
     document.getElementById("division").className="";
     document.getElementById(idBoton).className="activado";
+}
+
+//funcion para rellenar nueva formula
+function nuevaFormula(){
+    
 }

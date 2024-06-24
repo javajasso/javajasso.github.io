@@ -170,8 +170,7 @@ function verificarCuenta(req, res){
                 res.redirect("/admin");
 
                 setTimeout(() => {
-                    alert("Tu sesión ha expirado");
-                    console.log("Tu sesión ha sido expirada")
+                    console.log("***********Tu sesión ha sido expirada***************")
                 }, process.env.JWT_COOKIE_EXPIRES * 10 * 60 * 1000);
     } catch (err) {
         res.status(500);
