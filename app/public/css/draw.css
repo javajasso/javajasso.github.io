@@ -142,6 +142,7 @@ input[type="color"] {
     .navdraw {
         width: 80%;
         height: 40px;
+        top: 30%;
         position: absolute;
     }
 
@@ -178,6 +179,8 @@ input[type="color"] {
         height: 40px;
         display: inline-table;
         position: left;
+        top: 40%;
+
         
     }
 
@@ -205,4 +208,20 @@ input[type="color"] {
     #ageOutputId {
         font-size: 7.5pt;
     }
+}
+
+@media (max-width: 500px){
+    .navdraw {        
+        top: 35%;
+        
+    }
+
+}
+
+@media (max-width: 400px){
+    .navdraw {        
+        top: 50%;
+        
+    }
+
 }

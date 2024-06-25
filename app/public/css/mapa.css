@@ -143,3 +143,81 @@ ul li .mapa-subs i {
 .footer-map {
     margin-top: 200px;
 }
+
+@media (max-width: 800px){
+    
+
+}
+
+@media (max-width: 700px){
+    ul li .mapa-T1,
+    ul li .mapa-T2,
+    ul li .mapa-T3,
+    ul li .mapa-T4
+    {
+        font-size: 10px;
+    }
+
+    ul li .mapa-subs {
+        font-size: 10px;
+    }
+
+    ul li .mapa-T4 i a{
+        font-size: 9px;
+    }
+
+
+}
+
+@media (max-width: 600px){
+    .mapa-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px){
+    .mapa-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul li .mapa-T1,
+    ul li .mapa-T2,
+    ul li .mapa-T3,
+    ul li .mapa-T4
+    {
+        font-size: 10px;
+    }
+
+    ul li .mapa-subs {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 400px){
+    .mapa-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    ul li .mapa-T1,
+    ul li .mapa-T2,
+    ul li .mapa-T3,
+    ul li .mapa-T4
+    {
+        font-size: 14px;
+    }
+
+    ul li .mapa-subs {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 300px){
+    
+
+}

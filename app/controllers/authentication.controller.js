@@ -2,6 +2,7 @@ import bcryptjs from "bcryptjs";
 import jsonwebtoken from "jsonwebtoken";
 import dotenv from "dotenv";
 import { enviarVerificacionEmail } from "./../services/mail.service.js";
+import { enviarAutenticacionEmail } from "./../services/auth.service.js";
 
 
 dotenv.config();
@@ -9,7 +10,8 @@ dotenv.config();
 export const usuarios = [{
     user: 'Caleb',
     email: 'isabellabeauty.mk@gmail.com',
-    password: '$2a$05$YVTEJxMQbefYpaOGv58O4.BkjFQwjjj/ekRt9FUz.3o9Wcg0t8q.S',
+    password: 'Pract#24',
+    //password: '$2a$05$YVTEJxMQbefYpaOGv58O4.BkjFQwjjj/ekRt9FUz.3o9Wcg0t8q.S',
     verificado: false
     
     }]
@@ -29,7 +31,7 @@ async function login(req,res){
 
     if(!email || !password){
         console.log("Error desconocido");
-        return res.status(400).json({status:"Error", message:"Error desconocido"});
+        return res.status(400).json({status:"Error", message:"Los campos estan incompletos"});
         
         
     }
@@ -44,8 +46,8 @@ async function login(req,res){
         }
         console.log("Inicio Existoso")
         
-        const loginCorrecto = await bcryptjs.compare(password, usuarioRevision.password)
-        
+        const loginCorrecto = await bcryptjs.compare(password, usuarioRevision.password);
+        console.log(loginCorrecto);
        
         if(!loginCorrecto){
             console.log("Error durante el login la contraseña es diferente a la registada");
@@ -56,21 +58,28 @@ async function login(req,res){
         console.log("Password Check")
 
         const token = jsonwebtoken.sign(
-            {user:usuarioRevision.user},
+            {email:usuarioRevision.email},
             process.env.JWT_SECRET,
             {expiresIn:process.env.JWT_EXPIRATION});
 
+            const mail = await enviarAutenticacionEmail(email,token)
+            console.log(mail);
+
+            if(mail.accepted===0){
+                console.log("rechazado")
+                return res(500).json({status:"error", message:"Error enviando mail de verificación - Correo rechazado"})
+            }
+            console.log("Email Auth Aceptado")
+
+
             const cookieOption = {
-                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 10 * 60 * 1000),
+                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
                 path: "/"
             }
                 res.cookie("jwt",token,cookieOption);
-                //res.send({status:"ok", message:"Usuario loggeado", redirect:"/"})
+                res.send({status:"ok", message:"Usuario loggeado", redirect:"/admin"})
 
-                const indexUsuarioActualizar = usuarios.findIndex(usuario => usuario.email === email);
-                usuarios[indexUsuarioActualizar].verificado = true;
-
-                res.json({ status: "ok", message: "Usuario loggeado", redirect: "/" });
+                
 
                               
         }catch (error) {
@@ -158,7 +167,7 @@ function verificarCuenta(req, res){
     
             const cookieOption = {
                 //expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 1000),
-                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 10 * 60 * 1000),
+                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
                 path: "/"
             }
 

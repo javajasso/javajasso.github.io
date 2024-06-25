@@ -15,9 +15,9 @@ const transporter = nodemailer.createTransport({
 
 export async function enviarAutenticacionEmail(direccion, token){
     return await transporter.sendMail({
-        from: "Edumates - <edumates@gmail.com>",
+        from: "EdumatesKIDS - <edumates@gmail.com>",
         to: direccion,
-        subject: "Autenticación de Inicio de Sesión - EDUMATES",
+        subject: "Autenticación de Inicio de Sesión - EDUMATESKIDS",
         html: crearMailVerificacion(token)
     })
 }

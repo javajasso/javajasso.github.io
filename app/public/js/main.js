@@ -17,7 +17,6 @@ function mostrarMenu() {
    migas.style.display = "none";
 }
 
-migas.style.display = "block";
 
 ScrollReveal().reveal('.showcase');
 ScrollReveal().reveal('.news-cards', {delay: 500});

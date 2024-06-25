@@ -42,7 +42,7 @@
         
         if(!res.ok && !enviarFormulario()){
         
-        console.log("Necesitas verificar tu correo")
+        //console.log("Necesitas verificar tu correo")
         alertaExito.classList.remove("alertaExito");
         alertaError.classList.add("alertaError");
         setTimeout(() => {

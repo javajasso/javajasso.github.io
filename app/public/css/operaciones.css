@@ -119,3 +119,44 @@
     
     margin-top: 200px;
 }
+
+@media (max-width: 500px){
+    
+    .containerOper {
+        width: 380px; 
+    } 
+
+    .operando {
+        font-size: 20px;
+        display: inline-block;
+        margin: 5px;
+    }
+ 
+    
+}
+
+@media (max-width: 500px){
+
+    .containerOper h2{
+        font-size: 30px;
+    }
+    
+    .containerOper {
+        width: 300px; 
+    } 
+
+    .operando {
+        font-size: 20px;
+    
+    }
+
+    .container-operadores button{
+        border: none;
+        margin: 5px 10px;
+        height: 40px;
+        width: 70px;
+        
+    }
+ 
+    
+}
