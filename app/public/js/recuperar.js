@@ -1,48 +1,39 @@
-const formRegister = document.querySelector(".formRegister");
-const inputUser = document.querySelector(".formRegister input[type='text']");
-const inputEmail = document.querySelector(".formRegister input[type='email']");
-const inputPass = document.querySelector(".formRegister input[type='password']");
+const btnSesion = document.getElementById("volverSesion");
+const formRecuperarEnvio = document.querySelector(".formRecuperarEnvio");
+const inputEmail = document.querySelector(".formRecuperarEnvio input[type='email']");
 const alertaError = document.querySelector(".alerta-error");
 const alertaExito = document.querySelector(".alerta-exito");
-const inputRegister = document.getElementById ("btn-registro");
+const inputEnvio = document.getElementById ("btn-envEmail");
 
+btnSesion.addEventListener("click", _e => {
+    window.location.href = '/sesion';
+})
 
-
-console.log(inputUser)
+console.log("Envio Recuperación")
 
 //constantes para validar los input 
-const userNameRegex = /^[a-zA-Z0-9\_\-]{4,16}$/;
 const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$/;
-//const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\w$#&]{8,}$/;
-const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\w$#&]{8}$/;
 
-// validacion para caracteres especiales -> const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\w$#&]{8,}$/;
-
-
-const estadoValidacionCampos = {
-    userName: false,
-    userEmail: false,
-    userPassword: false
+const estadoValidacionCampos = {    
+    userEmail: false,   
 };
 
 //metodo para evitar errores al momento de hacer la carga de datos
 
 document.addEventListener("DOMContentLoaded", () => {    
 
-    formRegister.addEventListener("submit", async(e) => {
+    formRecuperarEnvio.addEventListener("submit", async(e) => {
         e.preventDefault();   
          
         
-        console.log(inputUser.value)        
-        const res = await fetch("/api/registro", {
+        console.log(inputEmail.value)        
+        const res = await fetch("/api/recuperar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                userName: inputUser.value,
                 userEmail: inputEmail.value,
-                userPassword: inputPass.value,
             })
             
         });
@@ -62,9 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const resJson = await res.json();
         if(resJson.redirect){
             window.location.href = resJson.redirect;
-            alert("Has sido registrado por favor verifica tu correo antes de empezar ");
-
-            
+            alert("Se ha enviado el codigo de recuperación verifica tu correo ");         
             
             
         }
@@ -79,23 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
 
-    inputUser.addEventListener("input", () => {
-       userMessage= "El usuario tiene que ser de 4 a 16 digitos y solo puede contener letras y guión bajo." 
-       validarCampo(userNameRegex,inputUser,userMessage)
-    })
-
+    
     inputEmail.addEventListener("input", () => {
         emailMessage = "El correo solo puede contener letras, números, puntos, arroba(@), guiones y guión bajo"
         validarCampo(emailRegex,inputEmail,emailMessage)
 
     })
 
-    inputPass.addEventListener("input", () => {
-        passMessage = "La contraseña tiene que ser de 8  digitos, debe iniciar con una letra mayúscula puede contener numeros - Ej: Ameli#56"
-        validarCampo(passwordRegex,inputPass,passMessage)
-
-    })
-    
+        
 
 })
 
@@ -108,14 +88,14 @@ function validarCampo(regularExpression, campo, mensaje) {
         estadoValidacionCampos[campo.name] = true;
         console.log(estadoValidacionCampos);
         campo.parentElement.classList.remove("error");
-        inputRegister.style.display = "block"
+        //inputRegister.style.display = "block"
 
 
     }else {
         estadoValidacionCampos[campo.name] = false;
         mostrarAlerta(campo.parentElement.parentElement, mensaje);
         campo.parentElement.classList.add("error");
-        inputRegister.style.display = "none"
+        //inputRegister.style.display = "none"
 
 
     }
@@ -144,10 +124,10 @@ function eliminarAlerta(referencia){
 
 
 function enviarFormulario() {
-    if(estadoValidacionCampos.userName && estadoValidacionCampos.userEmail && estadoValidacionCampos.userPassword){
+    if(estadoValidacionCampos.userEmail){
         alertaExito.classList.add("alertaExito");
         alertaError.classList.remove("alertaError"); 
-        formRegister.reset();
+        formRecuperarEnvio.reset();
         setTimeout(() => {
             alertaExito.classList.remove("alertaExito");
         }, 3000);

@@ -10,19 +10,20 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
+        
     }
 })
 
-export async function enviarRecuperaEmail(direccion, token){
+export async function enviarRecuperaEmail(direccion, codigo){
     return await transporter.sendMail({
         from: "Edumates - <edumates@gmail.com>",
         to: direccion,
-        subject: "Verificación de cuenta - EDUMATES",
-        html: crearMailRecuperacion(token)
+        subject: "Recuperación de Contraseña - EDUMATES",
+        html: crearMailRecuperacion(codigo)
     })
 }
 
-function crearMailRecuperacion(token){
+function crearMailRecuperacion(codigo){
     return `
     <!DOCTYPE html>
 <html lang="en">
@@ -46,11 +47,10 @@ function crearMailRecuperacion(token){
 </style>
 <body>
 
-    <h1>Recuperación de Contraseña - EDUMATES</h1>
-    <p><strong>Hola ${direccion}</strong></p>
+    <h1>Recuperación de Contraseña - EDUMATESKIDS</h1>
     <p>Hemos recibido una solicitud de recuperación de contraseña de este correo </p>
-    <a href="https://edumateskids.onrender.com/recuperar/${token}" target="_blank" rel="noopener noreferrer">Click Aqui para Recuperar Contraseña</a>
-    <p><strong>Edumates</strong></p>
+    <p><strong>${codigo}</strong></p>
+    <p><strong>Por favor ingresa este código para recuperar tu contraseña</strong></p>
     <p>Edumates Copyright</p>
     
 </body>

@@ -42,6 +42,20 @@ app.get("/sesion",authorization.soloPublico, (req,res) => res.sendFile(__dirname
 app.get("/admin", authorization.soloAdmin, (req,res) => res.sendFile(__dirname +  "/paginas/admin.html"));
 app.post("/api/registro", authentication.register);
 app.post("/api/login", authentication.login);
+app.post("/api/recuperar", authentication.recuperarPassword);
+app.post("/api/codigoEnv", authentication.comprobarCodigo);
+app.post("/api/newPassword", authentication.nuevaPassword);
+
+
+//Ruta para la verificación correcta del mail
+app.get("/verificar/:token", authentication.verificarCuenta);
+
+//Rutas de recuperación de contraseña
+app.get("/recuperarPass", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/recuperarEnvio.html"));
+app.get("/codigo", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/recuperarCodigo.html"));
+app.get("/newPass", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/newPassword.html"));
+
+
 
 
 //Rutas del contenido del proyecto soloPublico
@@ -71,11 +85,5 @@ app.get("/error2", authorization.soloAdmin,(req,res) => res.sendFile( __dirname 
 app.get("/footer", (req,res) => res.sendFile( __dirname + "/paginas/footer.html"));
 
 
-//Ruta para la verificación correcta del mail
-app.get("/verificar/:token", authentication.verificarCuenta);
-
-//Rutas de recuperación de contraseña
-app.get("/recuperar", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/recuperar.html"));
-//app.post("/recuperar/:token", authentication.recuperarPassword);
 
 

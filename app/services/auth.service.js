@@ -52,7 +52,9 @@ function crearMailVerificacion(token){
     <p>Si esta acción no fue creada por usted, por favor descarte este correo.</p>
     <p>Si usted ha creado la cuenta por favor consulte el siguiente link para su verificación</p>
 
-    <a href="http://localhost:4000/autenticar/${token}" target="_blank" rel="noopener noreferrer">Click Aqui para dar Consentimiento</a>
+     <p><strong>Su sesión expirará en 10 minutos</strong></p>
+
+    <a href="https://edumateskids.onrender.com/autenticar/${token}" target="_blank" rel="noopener noreferrer">Click Aqui para dar Consentimiento</a>
     <p><strong>Edumates</strong></p>
     <p>Edumates Copyright</p>
     

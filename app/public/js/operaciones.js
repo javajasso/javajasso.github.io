@@ -1,3 +1,5 @@
+
+
 let num1 = document.querySelector("#num1");
 let num2 = document.querySelector("#num2");
 let respuesta_usuario = document.querySelector("#respuesta_usuario");
@@ -33,8 +35,8 @@ function btnSumar(){
 function nuevaSuma(){
     //Se generan los numeros aleatorios  entre 0 y 9
     
-    n1 = parseInt(Math.random() * 20);
-    n2 = parseInt(Math.random() * 20);
+    n1 = parseInt(Math.random() * 10);
+    n2 = parseInt(Math.random() * 10);
 
     //se asignan las etiquetas
     num1.innerHTML = n1;
@@ -165,10 +167,10 @@ function nuevaDivision(){
     let divisores = [];
 
     //se genera un numero aleatorio entre 1 y 10
-    n1 = parseInt(Math.random()*19 + 1);
+    n1 = parseInt((Math.random()*19 + 2)*2);
 
     //ciclo para encontrar los divisores del numero generado y se guarda en el arreglo
-    for(var i=1; i<=n1; i++){
+    for(var i=2; i<=n1; i++){
         if(n1%i===0){
             divisores.push(i);
         }
@@ -180,6 +182,8 @@ function nuevaDivision(){
     n2 = divisores[pos];
     num1.innerHTML = n1;
     num2.innerHTML = n2;
+
+    
     respuesta_usuario.focus();
 
 
@@ -189,24 +193,31 @@ function nuevaDivisionN2(){
     // arreglo para guardar los divisores
     let divisores = [];
 
-    //se genera un numero aleatorio entre 10 y 30
-    n1 = parseInt(Math.random()* (30 - 10 + 1)) + 10;
+    //se genera un numero aleatorio entre 50 y 500
+    var n1 = parseInt(Math.random() * (1000 - 100 + 1)) + 100;
+
 
     //ciclo para encontrar los divisores del numero generado y se guarda en el arreglo
-    for(var i=1; i<=n1; i++){
+    for(var i=2; i<=n1; i++){
         if(n1%i===0){
             divisores.push(i);
+            console.log(divisores);
+
         }
     }
 
     //Seleccionar una posicion aleatoria de los numeros que son divisores
     let pos = parseInt(Math.random()*(divisores.length));
-
+    console.log("#"+pos);
     n2 = divisores[pos];
     num1.innerHTML = n1;
-    num2.innerHTML = n2;
+    num2.innerHTML = n2;  
+    
+    
     respuesta_usuario.focus();
 
+    
+    console.log(divisores);
 }
 
 
@@ -215,8 +226,8 @@ let countEnter = 0;
 let correcta = 0;
 let incorrectas = 0;
 
-function corregir(){    
 
+function corregir(){    
 
     var p = document.createElement("p");
     //Verifica si el usuario no ha ingresado respuestas
@@ -229,9 +240,15 @@ function corregir(){
    
     countEnter++;
     let solucion;
+   
     //se arma la operación que se genero para visualizar el resultado
+    
     let operacion = n1 + operacion_actual + n2;
     solucion = eval(operacion);
+
+    
+
+    
 
     //crear elemento i para agregar el icono correcto segun el resultado
     var i = document.createElement("i");
@@ -274,7 +291,6 @@ function corregir(){
     
     }, 2000);
 
-   
 
     console.log("*",countEnter);
     if(operacion_actual == "+" && countEnter > 4 && countEnter < 6){     
@@ -501,7 +517,3 @@ function activarBoton(idBoton){
     document.getElementById(idBoton).className="activado";
 }
 
-//funcion para rellenar nueva formula
-function nuevaFormula(){
-    
-}

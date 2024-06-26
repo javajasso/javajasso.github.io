@@ -38,7 +38,7 @@
             <div class="informacion">
                 <div class="info-childs">
                     <h2>Bienvenido</h2>
-                    <p>Proporciona tus datos para la recuperación</p>
+                    <p>Proporciona tus datos para la recuperación o ingrese a la pagina de Sesión para intentar Nuevamente</p>
                     <input type="button" value="Iniciar Sesión" id="volverSesion">
                 </div>
             </div>
@@ -50,42 +50,19 @@
                     <i class="fas fa-lock"></i>
                     
                 </div>
-                <p>Enviar email de recuperación</p>
-                <form class="form formRegister" novalidate autocomplete="on">
+                <p>Insertar Código de recuperación</p>
+                <form class="form formCodigo" novalidate autocomplete="on">
                     
                     <div>
                         <label>
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Correo Electrónico" name="userEmail" id="userEmail" autocomplete="on">
+                            <i class="fas fa-lock"></i>
+                            <input type="text"  placeholder="Código" name="userCodigo" id="userCodigo">
                         </label>
                     </div>
-                    <input type="submit" value="Enviar email"  id="btn-envEmail">
+                    <input type="submit" value="Comprobar Código"  id="btn-comprobarCodigo">
 
-                    <div class="icons">
-                        <i class="fas fa-lock"></i>
-                    <p>Reseteo de Contraseña</p>
-                    </div>
-                    <div>
-                        <label>
-                            <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Nueva Contraseña" name="newPassword" id="newPassword" >
-                        </label>
-                    </div> 
-
-                    <div>
-                        <label>
-                            <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Confirmar Contraseña" name="newPassword" id="confirmPassword" >
-                        </label>
-                    </div>            
-                   
-
-                    <input type="submit" value="Enviar Contraseña"  id="btn-envPass">
-                    <h2 style="color: white;">_</h2>
-
-                   <!--
-                    
-                   -->
+                    <div class="alerta-error">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito">Envio de email correctamente</div>
 
                    
                 </form>
@@ -97,6 +74,7 @@
     
 
 <script src="/js/main.js"></script>
+<script src="/js/codigo.js"></script>
     
 </body>
 </html>
