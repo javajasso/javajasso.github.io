@@ -63,10 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(resJson.redirect){
             window.location.href = resJson.redirect;
             alert("Tu contraseña ha sido actualizada Bienvenido!!!! ");
-
-            
-            
-            
+   
         }
         
         }

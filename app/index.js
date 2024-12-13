@@ -23,6 +23,7 @@ app.listen(app.get("port"));
 console.log("Servidor corriendo en puerto", app.get("port"));
 import { methods as authentication} from './controllers/authentication.controller.js';
 import { methods as authorization } from './middlewares/authorization.js';
+import { methods as operacion } from './public/js/operBack.js';
 
 
 //Configuración
@@ -55,6 +56,9 @@ app.get("/recuperarPass", authorization.soloPublico, (req,res) => res.sendFile(_
 app.get("/codigo", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/recuperarCodigo.html"));
 app.get("/newPass", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/newPassword.html"));
 
+//Ruta para reestructuras las operaciones
+
+app.post("/api/sumar", operacion.btnSumar);
 
 
 
@@ -76,7 +80,7 @@ app.get("/crear", authorization.soloAdmin,(req,res) => res.sendFile(__dirname + 
 app.get("/galeria", authorization.soloAdmin, (req,res) => res.sendFile(__dirname +  "/paginas/galeria.html"));
 app.get("/multi", authorization.soloAdmin,(req,res) => res.sendFile(__dirname +  "/paginas/multi.html"));
 app.get("/resta", authorization.soloAdmin,(req,res) => res.sendFile(__dirname +  "/paginas/resta.html"));
-app.get("/suma", authorization.soloAdmin,(req,res) => res.sendFile( __dirname + "/paginas/suma.html"));
+app.get("/suma", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/suma.html"));
 app.get("/nosotros", authorization.soloAdmin, (req,res) => res.sendFile( __dirname + "/paginas/nosotros.html"));
 app.get("/mapa", authorization.soloAdmin,(req,res) => res.sendFile( __dirname + "/paginas/mapa.html"));
 app.get("/error2", authorization.soloAdmin,(req,res) => res.sendFile( __dirname + "/paginas/errorVideo.html"));
