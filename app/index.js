@@ -75,15 +75,15 @@ app.get("/material", (req,res) => res.sendFile( __dirname + "/paginas/material.h
 
 
 //Rutas del contenido del proyecto soloAdmin
-app.get("/index", authorization.soloAdmin, (req,res) => res.sendFile(__dirname +  "/paginas/index.html"));
-app.get("/crear", authorization.soloAdmin,(req,res) => res.sendFile(__dirname +  "/paginas/crear.html"));
-app.get("/galeria", authorization.soloAdmin, (req,res) => res.sendFile(__dirname +  "/paginas/galeria.html"));
-app.get("/multi", authorization.soloAdmin,(req,res) => res.sendFile(__dirname +  "/paginas/multi.html"));
-app.get("/resta", authorization.soloAdmin,(req,res) => res.sendFile(__dirname +  "/paginas/resta.html"));
+app.get("/index", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/index.html"));
+app.get("/crear", authorization.soloPublico,(req,res) => res.sendFile(__dirname +  "/paginas/crear.html"));
+app.get("/galeria", authorization.soloPublico, (req,res) => res.sendFile(__dirname +  "/paginas/galeria.html"));
+app.get("/multi", authorization.soloPublico,(req,res) => res.sendFile(__dirname +  "/paginas/multi.html"));
+app.get("/resta", authorization.soloPublico,(req,res) => res.sendFile(__dirname +  "/paginas/resta.html"));
 app.get("/suma", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/suma.html"));
-app.get("/nosotros", authorization.soloAdmin, (req,res) => res.sendFile( __dirname + "/paginas/nosotros.html"));
-app.get("/mapa", authorization.soloAdmin,(req,res) => res.sendFile( __dirname + "/paginas/mapa.html"));
-app.get("/error2", authorization.soloAdmin,(req,res) => res.sendFile( __dirname + "/paginas/errorVideo.html"));
+app.get("/nosotros", authorization.soloPublico, (req,res) => res.sendFile( __dirname + "/paginas/nosotros.html"));
+app.get("/mapa", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/mapa.html"));
+app.get("/error2", authorization.soloPublico,(req,res) => res.sendFile( __dirname + "/paginas/errorVideo.html"));
 
 
 app.get("/footer", (req,res) => res.sendFile( __dirname + "/paginas/footer.html"));
