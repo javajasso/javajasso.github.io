@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 
 
 //importando la conexion a la BD
-import conexion from './db.js';
+//import conexion from './db.js';
 
 
 //codigo para habilitar __dirname en las rutas

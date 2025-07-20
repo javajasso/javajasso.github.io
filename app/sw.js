@@ -1,5 +1,5 @@
-self.addEventListener('install', (event) => {
-    event.waitUntil(
+self.addEventListener('install', (eventos) => {
+    eventos.waitUntil(
       caches.open('pwa-cache').then((cache) => {
         return cache.addAll([
           '/',
@@ -107,11 +107,43 @@ self.addEventListener('install', (event) => {
     );
   });
   
-  self.addEventListener('fetch', (event) => {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
-      })
-    );
-  });
+    
   
+self.addEventListener("install", eventos => {
+  console.log("SW instalado", eventos);
+
+  const promInstalacion = new Promise((resolve, reject) => {
+      setTimeout( ()=> {
+          console.log("Appshell instalado");
+          self.skipWaiting();
+          resolve();
+      }, 2000 );
+
+      
+  });
+
+  eventos.waitUntil( promInstalacion );
+});
+
+self.addEventListener("activate", eventos => {
+  console.log("SW activado 123456", eventos);
+})
+
+self.addEventListener("fetch", eventos => {
+  // console.log("SW fetch", eventos.request.url );
+
+  // if (eventos.request.url.includes("jsonplaceholder")){
+  //     const respuesta = new Response("{nombre: 'Ana Jasso'}");
+  //     eventos.respondWith(respuesta);
+  // }
+});
+
+self.addEventListener("sync", eventos => {
+  console.log("Se activa el evento sync");
+  console.log(eventos);
+  console.log(eventos.tag);
+});
+
+self.addEventListener("push", eventos => {
+  console.log("Se activa la notificación: ", eventos.data.text());
+})
