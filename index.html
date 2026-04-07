@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Ana Jasso</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Ana Jasso</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#acerca">Acerca de Mi</a></li>
+                <li><a href="#experiencia">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- menú dispositivos moviles -->
+    <nav id="hamburguesa-nav">
+        <div class="logo">Ana Jasso</div>
+        <div class="hamburguesa-menu">
+            <div class="hamburguesa-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#acerca" onclick="toggleMenu()">Acerca de</a></li>
+                <li><a href="#experiencia" onclick="toggleMenu()">Habilidades</a></li>
+                <li><a href="#proyectos" onclick="toggleMenu()">Proyectos</a></li>
+                <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <section id="perfil">
+        <div class="chat-legend floating">
+            Invierno de estrellas... la primavera pronto llegará
+        </div>
+        <div class="stars-background"></div>
+        <div class="section__pic-container">
+            <img src="./assets/annia-circle2.png" alt="Ana Jasso Perfil">
+        </div>
+        <div class="section__text">
+
+            <!-- <p class="section__text__p1">Hola, Yo soy</p> -->
+            <div class="">
+                <img src="./assets/AJ-azul2.png" alt="Ana Jasso Perfil" class="reload">
+            </div>
+            <!-- <h1 class="title">Ana Jasso</h1>
+            <p class="section__text__p2">Full Stack Developer | Gestión de proyectos</p> -->
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/CV_Ana Jasso.pdf')">Descargar CV</button>
+                <button class="btn btn-color-1" onclick="location.href='#contacto'">Información de Contacto</button>
+            </div>
+            <div id="contenedor-redes">
+                <img src="./assets/linkedin3.png" alt="Mi perfil LinkedIn" class="icon"
+                    onclick="location.href='https://linkedin.com/in/ana-jasso'" />
+                <img src="./assets/github-icon.jpg" alt="Mi perfil GitHub" class="icon"
+                    onclick="location.href='https://github.com/javajasso'" />
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="acerca">
+        <p class="section__text__p1">Conoce más</p>
+        <h1 class="title">Acerca de Mí</h1>
+        <div class="section-container">
+            <div class="section__pic-container">
+                <img src="./assets/ana1.png" alt="Imagen Perfil" class="about-pic" />
+            </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="./assets/experience.png" alt="experiencia icon" class="color icon" />
+                        <h3>Experiencia</h3><br>
+                        <p>1 año <br /> Desarrollador Web Full Stack</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="./assets/education.png" alt="educacion icon" class="color icon" />
+                        <h3>Educación</h3><br>
+                        <p>Ing. en Desarrollo y Gestión de Software<br /><br> T.S.U. en
+                            Desarrollo de Software Multiplataforma</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Ingeniera en Desarrollo y Gestión de Software con enfoque Full Stack, con experiencia profesional
+                        en Clever Cloud y Optimen. He desarrollado proyectos reales usando JavaScript, Vue, Angular,
+                        Node.js y Java, diseñando el maquetado de funcionalidades en Figma e implementando el
+                        modelado de datos para la conexión al backend con MongoDB, MySQL y SQL además de proyectos
+                        desplegados en producción. </p>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="color icon arrow"
+            onclick="location.href='./#experiencia'" />
+    </section>
+
+    <section id="experiencia">
+        <p class="section__text__p1">Explora</p>
+        <h1 class="title">Experiencia</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Development</h2>
+                    <br>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>HTML</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>CSS</h3>
+                                <P>Basico</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>JavaScript</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>Angular</h3>
+                                <P>Basico</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>JAVA</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Development</h2>
+                    <br>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>MySQL</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>SQL</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>JavaScript</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>NodeJS</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>Express JS</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>Git</h3>
+                                <P>Intermedio</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experiencia icon" class="icon color" />
+                            <div>
+                                <h3>PHP</h3>
+                                <P>Básico</P>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="color icon arrow"
+            onclick="location.href='./#proyectos'" />
+    </section>
+
+    <section id="proyectos">
+        <p class="section__text__p1">Bienvenido a la sección de </p>
+        <h1 class="title">Proyectos</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/logo.png" alt="projecto 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Proyecto SweetHappiness</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Ver Demo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/EDULOGO.png" alt="projecto 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Proyecto EdumatesKids</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Ver Demo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/logo-projectsearch.jpeg" alt="projecto 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">ProyectSearch Mobile & IOT</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/ProjectSearch'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://drive.google.com/file/d/1KWMTDSa_69xsyVfVkOMIFR2WWHPjbhne/view'">
+                            Ver Demo
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="about-containers">
+
+                    <!-- 
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/sweethappiness.png" alt="projecto 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Proyecto Gestión de Inventario Java</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Ver Demo
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+                    <!-- <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/code.jpeg" alt="projecto 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Proyecto Gestión de Inventario Java</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/javajasso/'">
+                            Ver Demo
+                        </button>
+                    </div>
+                </div> -->
+
+                </div>
+
+            </div>
+            <img src="./assets/arrow.png" alt="Arrow icon" class="color icon arrow"
+                onclick="location.href='./#contacto'" />
+    </section>
+
+    <section id="contacto">
+        <p class="section__text__p1">Agendemos una conversación sobre tu próximo proyecto</p>
+        <h1 class="title">Contactame</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon color" />
+                <p><a href="mailto:ana.jassov@gmail.com">ana.jassov@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon color" />
+                <p><a href="https://www.linkedin.com/in/ana-jasso/">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#acerca">Sobre Mí</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p> &#169; 2026 Ana Jasso.</p>
+
+
+    </footer>
+
+    <div id="button-up">
+        <i class="fas fa-upload"></i>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
